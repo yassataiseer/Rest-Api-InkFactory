@@ -10,9 +10,11 @@ class order_writer:##writes into orders.db
         points = ["Order_No", "Client","Employee","Product","Model","Brand","Serial_No.","Accesory","Amount","Status","Description","Comments","Add_date","Up_date"]
         cursor = c.execute("SELECT * FROM stuffToPlot")
         orders = cursor.fetchall()
+        data = []
         for i in orders:
             final = dict(zip(points,i))
-        return final
+            data.append(final)
+        return data
     def ticket_builder():
         cursor = c.execute("SELECT order_No FROM stuffToPlot")
         number = cursor.fetchall()
