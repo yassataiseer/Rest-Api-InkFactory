@@ -1,9 +1,9 @@
 import requests
 BASE = "http://127.0.0.1:5000/"
-string = "3+Eshal+Taiseer+Samsung+A10S+Android+yyyyyy+Charger+$100+Pending+Cracked Screen+Give discount+Feb+Dec"
+string = "Syed Atuer Ali+6895 Apex Ct+Missisauga+75N 7H8+WORKS@HOTMAIL.COM+123 456 7890"
 #string = string.split("+")
 #print(string)
-response = requests.get(BASE+"order_builder/"+string)
+response = requests.get(BASE+"Client_Data_Editor/"+string)
 #response = requests.get(BASE+"/All_orders")
 
 

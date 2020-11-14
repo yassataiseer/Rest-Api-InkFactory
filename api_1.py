@@ -47,7 +47,11 @@ class Specific_Client_Data(Resource):
 class Client_Name(Resource):
     def get(self,name):
         pass
-
+class Client_Data_Editor(Resource):
+    def get(self,new_data):
+        new_data = new_data.split("+")
+        client.clients_write(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5])
+        pass
 api.add_resource(Order_builder,"/order_builder/<string:order_data>")
 api.add_resource(Order_Editor,"/order_editor/<string:change_data>")
 api.add_resource(Order_finder,"/Order_finder/<string:order_number>")
@@ -55,6 +59,8 @@ api.add_resource(All_orders,"/All_orders")
 api.add_resource(Last_order,"/Last_order")
 api.add_resource(Client_data,"/Client_data")
 api.add_resource(Specific_Client_Data,"/Specific_Client_Data/<string:name>")
+
+api.add_resource(Client_Data_Editor,"/Client_Data_Editor/<string:new_data>")
 
 if __name__ == "__main__":
 	app.run(debug=True)
