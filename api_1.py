@@ -24,12 +24,15 @@ class Order_Editor(Resource):
     def get(self,change_data):
         order_writer.update_data(change_data)
         return "DB edited"
-
+class All_orders(Resource):
+    def get(self):
+        a = order_writer.data_fetcher()
+        return jsonify(a)
 
 api.add_resource(Order_builder,"/order_builder/<string:order_data>")
 api.add_resource(Order_Editor,"/order_editor/<string:change_data>")
 api.add_resource(Order_finder,"/Order_finder/<string:order_number>")
+api.add_resource(All_orders,"/All_orders")
 
-print("yay")
 if __name__ == "__main__":
 	app.run(debug=True)

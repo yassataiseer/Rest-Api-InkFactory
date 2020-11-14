@@ -7,9 +7,12 @@ class order_writer:##writes into orders.db
         c.execute("INSERT INTO stuffToPlot VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(order_data[0],order_data[1],order_data[2],order_data[3],order_data[4],order_data[5],order_data[6],order_data[7],order_data[8],order_data[9],order_data[10],order_data[11],order_data[12],order_data[13]))  
         conn.commit()
     def data_fetcher():
+        points = ["Order_No", "Client","Employee","Product","Model","Brand","Serial_No.","Accesory","Amount","Status","Description","Comments","Add_date","Up_date"]
         cursor = c.execute("SELECT * FROM stuffToPlot")
         orders = cursor.fetchall()
-        return orders
+        for i in orders:
+            final = dict(zip(points,i))
+        return final
     def ticket_builder():
         cursor = c.execute("SELECT order_No FROM stuffToPlot")
         number = cursor.fetchall()
@@ -37,7 +40,6 @@ class order_writer:##writes into orders.db
                 send_data.append(rows)
             else:
                 pass
-            
         final = dict(zip(points,send_data[0]))
         return(final)
     def update_data(object):
