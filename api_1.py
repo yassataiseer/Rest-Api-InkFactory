@@ -28,11 +28,17 @@ class All_orders(Resource):
     def get(self):
         a = order_writer.data_fetcher()
         return jsonify(a)
+class Last_order(Resource):
+    def get(self):
+        a =order_writer.ticket_builder()
+        return a  
 
 api.add_resource(Order_builder,"/order_builder/<string:order_data>")
 api.add_resource(Order_Editor,"/order_editor/<string:change_data>")
 api.add_resource(Order_finder,"/Order_finder/<string:order_number>")
 api.add_resource(All_orders,"/All_orders")
+api.add_resource(Last_order,"/Last_order")
+
 
 if __name__ == "__main__":
 	app.run(debug=True)
