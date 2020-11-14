@@ -29,7 +29,7 @@ class client:
         for rows in data:
             final = dict(zip(points,rows))
             send_data.append(final)        
-        return( send_data)
+        return(send_data)
     def client_data(name):
         points = ["Name", "Adress1","Adress2","postalcode","email","phone"]
         send_data=[]
@@ -57,3 +57,5 @@ class client:
                 c.execute('UPDATE stuffToPlot SET phone = ?  WHERE name = ?;',number)
                 conn.commit()
         return"Done! Succesfully"
+
+#print(client.name_data())

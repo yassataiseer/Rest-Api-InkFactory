@@ -45,8 +45,9 @@ class Specific_Client_Data(Resource):
         a =  client.client_data(name)
         return jsonify(a)
 class Client_Name(Resource):
-    def get(self,name):
-        pass
+    def get(self):
+        a = client.name_data()
+        return jsonify(a)
 class Client_Data_Editor(Resource):
     def get(self,new_data):
         new_data = new_data.split("+")
@@ -58,8 +59,8 @@ api.add_resource(Order_finder,"/Order_finder/<string:order_number>")
 api.add_resource(All_orders,"/All_orders")
 api.add_resource(Last_order,"/Last_order")
 api.add_resource(Client_data,"/Client_data")
+api.add_resource(Client_Name,"/Client_Name")
 api.add_resource(Specific_Client_Data,"/Specific_Client_Data/<string:name>")
-
 api.add_resource(Client_Data_Editor,"/Client_Data_Editor/<string:new_data>")
 
 if __name__ == "__main__":
