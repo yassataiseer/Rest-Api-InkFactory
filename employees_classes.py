@@ -15,8 +15,6 @@ class employees:
         for rows in data:
             if users[0]==rows[2] and users[1]==rows[3]:
                 return True
-            else:
-                return False
     def Certain_Employee_Data(email):
         points = ["First Name", "Last Name","Email","Password","Add Date","New Date"]
         send_data=[]

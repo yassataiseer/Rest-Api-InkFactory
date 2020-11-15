@@ -64,6 +64,11 @@ class Edit_Employee(Resource):
         new_client_creds=new_client_creds.split("+")
         a = employees.write(new_client_creds[0],new_client_creds[1],new_client_creds[2],new_client_creds[3],new_client_creds[5])
         return "done succesfully!"
+class Validate_Employee(Resource):
+    def get(self,email_and_password):
+        email_and_password = email_and_password.split("+")
+        a = employees.validate_user(email_and_password)
+        return a
 
 api.add_resource(Order_builder,"/order_builder/<string:order_data>")
 api.add_resource(Order_Editor,"/order_editor/<string:change_data>")
@@ -76,6 +81,7 @@ api.add_resource(Specific_Client_Data,"/Specific_Client_Data/<string:name>")
 api.add_resource(Client_Data_Editor,"/Client_Data_Editor/<string:new_data>")
 api.add_resource(Certain_Worker_data,"/Certain_Worker_data/<string:email>")
 api.add_resource(Edit_Employee,"/Edit_Employee/<string:new_client_creds>")
+api.add_resource(Validate_Employee,"/Validate_Employee/<string:email_and_password>")
 
 
 if __name__ == "__main__":
