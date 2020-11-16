@@ -54,6 +54,13 @@ class Client_Data_Editor(Resource):
         new_data = new_data.split("+")
         client.clients_rewrite(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5])
         return "done succesfully"
+
+class Add_client(Resource):
+    def get(self,new_creds):
+        new_creds = new_creds.split("+")
+        print(new_creds[0])
+        a = client.data_entry(new_creds[0],new_creds[1],new_creds[2],new_creds[3],new_creds[4],new_creds[5])
+        return a
 """ employees.db classes for the api"""
 class Certain_Worker_data(Resource):
     def get(self,email):
@@ -82,6 +89,7 @@ api.add_resource(Client_Data_Editor,"/Client_Data_Editor/<string:new_data>")
 api.add_resource(Certain_Worker_data,"/Certain_Worker_data/<string:email>")
 api.add_resource(Edit_Employee,"/Edit_Employee/<string:new_client_creds>")
 api.add_resource(Validate_Employee,"/Validate_Employee/<string:email_and_password>")
+api.add_resource(Add_client,"/Add_client/<string:new_creds>")
 
 
 if __name__ == "__main__":

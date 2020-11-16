@@ -60,6 +60,7 @@ class client:
     def data_entry(name,address1,address2,postalcode,email,phone):
         c.execute("INSERT INTO stuffToPlot VALUES(?,?,?,?,?,?)",(name,address1,address2,postalcode,email,phone))
         conn.commit()
+        return "Done Succesfully"
 
 
 #print(client.name_data())
