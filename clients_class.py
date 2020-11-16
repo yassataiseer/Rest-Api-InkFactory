@@ -40,7 +40,7 @@ class client:
                 final = dict(zip(points,rows))
                 send_data.append(final)
         return send_data
-    def clients_write(name,address1,address2,postcode,email,phone):
+    def clients_rewrite(name,address1,address2,postcode,email,phone):
         c.execute("SELECT name FROM stuffToPlot")
         a = c.fetchall()
         for row in a:
@@ -57,5 +57,9 @@ class client:
                 c.execute('UPDATE stuffToPlot SET phone = ?  WHERE name = ?;',number)
                 conn.commit()
         return"Done! Succesfully"
+    def data_entry(name,address1,address2,postalcode,email,phone):
+        c.execute("INSERT INTO stuffToPlot VALUES(?,?,?,?,?,?)",(name,address1,address2,postalcode,email,phone))
+        conn.commit()
+
 
 #print(client.name_data())

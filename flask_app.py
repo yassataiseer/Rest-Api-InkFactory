@@ -52,7 +52,7 @@ class Client_Name(Resource):
 class Client_Data_Editor(Resource):
     def get(self,new_data):
         new_data = new_data.split("+")
-        client.clients_write(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5])
+        client.clients_rewrite(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5])
         return "done succesfully"
 """ employees.db classes for the api"""
 class Certain_Worker_data(Resource):
