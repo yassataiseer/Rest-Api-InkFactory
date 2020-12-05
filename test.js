@@ -1,5 +1,5 @@
 const { accessSync } = require("fs");
-const fetch = require("node-fetch");
+//const fetch = require("node-fetch");
 const url='http://inkfactory.pythonanywhere.com/Validate_Employee/adil@theinkfactory.ca+1234567890';
 
 
@@ -14,7 +14,7 @@ fetch(link).then(
       a = json.toString()
       console.log(a)
       if (a =="true"){
-        console.log("log em in");
+        return "works lol";
       }
     }
     else{
