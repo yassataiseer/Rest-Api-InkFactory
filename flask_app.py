@@ -52,15 +52,21 @@ class Client_Name(Resource):
 class Client_Data_Editor(Resource):
     def get(self,new_data):
         new_data = new_data.split("+")
-        client.clients_rewrite(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5])
-        return "done succesfully"
-
+        try:
+            client.clients_rewrite(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5])    
+            return jsonify({"Status":"done succesfully"} )
+        except IndexError:
+            return jsonify({"Status":"Incorrect Credentials"})
 class Add_client(Resource):
     def get(self,new_creds):
         new_creds = new_creds.split("+")
-        print(new_creds[0])
-        a = client.data_entry(new_creds[0],new_creds[1],new_creds[2],new_creds[3],new_creds[4],new_creds[5])
-        return a
+        #print(new_creds[0])
+        try:
+            a = client.data_entry(new_creds[0],new_creds[1],new_creds[2],new_creds[3],new_creds[4],new_creds[5])
+            return jsonify(a)
+        except IndexError:
+            return jsonify({"Status":"Failure Make Better Credentials"}) 
+
 """ employees.db classes for the api"""
 class Certain_Worker_data(Resource):
     def get(self,email):
@@ -75,7 +81,7 @@ class Validate_Employee(Resource):
     def get(self,email_and_password):
         email_and_password = email_and_password.split("+")
         a = employees.validate_user(email_and_password)
-        return a
+        return jsonify(a)
 
 api.add_resource(Order_builder,"/order_builder/<string:order_data>")
 api.add_resource(Order_Editor,"/order_editor/<string:change_data>")

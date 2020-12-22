@@ -11,22 +11,22 @@ class employees:
         send_data=[]
         c.execute('SELECT * FROM stuffToPlot')
         data = c.fetchall()
-        #print(data)
         for rows in data:
             if users[0]==rows[2] and users[1]==rows[3]:
-                return True
+                return {"Status" : True}
+        else:
+            return {"Status" : False}
     def Certain_Employee_Data(email):
         points = ["First Name", "Last Name","Email","Password","Add Date","New Date"]
-        send_data=[]
+        send_data={}
         c.execute('SELECT * FROM stuffToPlot')
         data = c.fetchall()
         for rows in data:
             if email==rows[2]:
-                final = dict(zip(points,rows))
-                send_data.append(final)            
-            else:
+                data1 = dict(zip(points,rows))
+            else:            
                 pass
-        return(send_data)
+        return(data1)
     def write(firstname,lastname,email,password,newdate):
         c.execute("SELECT Email FROM stuffToPlot")
         a = c.fetchall()

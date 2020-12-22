@@ -28,8 +28,8 @@ class client:
         send_data = []
         for rows in data:
             final = dict(zip(points,rows))
-            send_data.append(final)        
-        return(send_data)
+            #send_data.append(final)        
+        return(final)
     def client_data(name):
         points = ["Name", "Adress1","Adress2","postalcode","email","phone"]
         send_data=[]
@@ -60,7 +60,10 @@ class client:
     def data_entry(name,address1,address2,postalcode,email,phone):
         c.execute("INSERT INTO stuffToPlot VALUES(?,?,?,?,?,?)",(name,address1,address2,postalcode,email,phone))
         conn.commit()
-        return "Done Succesfully"
+        if IndexError:
+            return {"Status":"Failure Make Better Credentials"}
+        else:
+            return {"Status":"Done Succesfully"}
 
 
 #print(client.name_data())
