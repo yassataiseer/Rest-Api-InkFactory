@@ -51,20 +51,20 @@
 
 ## Basic Structure of Databases:
 ### Clients.db :
-#### Name
-#### Address1
-#### Address2
-#### Postal Code
-#### Email
-#### Phone
+* Name
+* Address1
+* Address2
+* Postal Code
+* Email
+* Phone
 
 ### employees.db :
-#### FirstName
-#### LastName
-#### Email
-#### Password
-#### Date Added
-#### Last date updated
+* FirstName
+* LastName
+* Email
+* Password
+* Date Added
+* Last date updated
 
 ### employees.db :
 * FirstName
