@@ -67,12 +67,12 @@
 #### Last date updated
 
 ### employees.db :
-#### FirstName
-#### LastName
-#### Email
-#### Password
-#### Date Added
-#### Last date updated
+* FirstName
+* LastName
+* Email
+* Password
+* Date Added
+* Last date updated
 
 ##### All endpoints are considered as strings 
 
