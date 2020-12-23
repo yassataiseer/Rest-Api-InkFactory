@@ -44,7 +44,7 @@
 
 ### 127.0.0.1:5000/Edit_Employee/first_name+lastname+Email+password+date -->Rewrites employees.db data for specific employee with given argument
 
-### 127.0.0.1:5000/Validate_Employees/Employee Creds -->Rewrites employees.db data for specific employee with given argument
+#### 127.0.0.1:5000/Validate_Employees/Employee Creds -->Rewrites employees.db data for specific employee with given argument
 
 ### 127.0.0.1:5000/Add_client/New Client Creds -->Rewrites employees.db data for specific employee with given argument
 
