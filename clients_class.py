@@ -10,7 +10,6 @@ c = conn.cursor()
 class client:
     def data():
         points = ["Name", "Adress1","Adress2","postalcode","email","phone"]
-        send_data=[]
         c.execute('SELECT * FROM stuffToPlot')
         data = c.fetchall()
         #print(data)
@@ -28,8 +27,8 @@ class client:
         send_data = []
         for rows in data:
             final = dict(zip(points,rows))
-            #send_data.append(final)        
-        return(final)
+            send_data.append(final)        
+        return send_data
     def client_data(name):
         points = ["Name", "Adress1","Adress2","postalcode","email","phone"]
         send_data=[]
@@ -38,8 +37,8 @@ class client:
         for rows in data:
             if name==rows[0]:
                 final = dict(zip(points,rows))
-                send_data.append(final)
-        return send_data
+                #send_data.append(final)
+        return final
     def clients_rewrite(name,address1,address2,postcode,email,phone):
         c.execute("SELECT name FROM stuffToPlot")
         a = c.fetchall()

@@ -48,6 +48,7 @@ class Specific_Client_Data(Resource):
 class Client_Name(Resource):
     def get(self):
         a = client.name_data()
+        a = str(a)
         return jsonify(a)
 class Client_Data_Editor(Resource):
     def get(self,new_data):
