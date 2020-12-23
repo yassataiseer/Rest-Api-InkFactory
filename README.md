@@ -26,27 +26,27 @@
 ## Api Endpoints:
 ### 127.0.0.1:5000/order_builder/Order_No+Client+Employee+Product+Brand+Serial_No.+Accesories+Amount+Status+Description+Comments+Add_date+Recent_data --> builds orders into orders.db
 
-### 127.0.0.1:5000/order_editor/New Credentials(same formula as order_builder) --> Edits orders in orders.db
+#### -127.0.0.1:5000/order_editor/New Credentials(same formula as order_builder) --> Edits orders in orders.db
 
-### 127.0.0.1:5000/order_finder/Order_Number --> Takes order number and returns the full order's detail
+#### -127.0.0.1:5000/order_finder/Order_Number --> Takes order number and returns the full order's detail
 
-### 127.0.0.1:5000/All_orders --> Returns all the orders in orders.db
+#### -127.0.0.1:5000/All_orders --> Returns all the orders in orders.db
 
-### 127.0.0.1:5000/Last_order --> Returns the last order's number in orders.db this helps make the next ticket number in order 
+#### -127.0.0.1:5000/Last_order --> Returns the last order's number in orders.db this helps make the next ticket number in order 
 
-### 127.0.0.1:5000/Client_data --> Returns all the data from clients.db
+#### -127.0.0.1:5000/Client_data --> Returns all the data from clients.db
 
-### 127.0.0.1:5000/Client_Name --> Returns the names column from clients.db 
+#### -127.0.0.1:5000/Client_Name --> Returns the names column from clients.db 
 
-### 127.0.0.1:5000/Specific_Client_Data/name --> Returns the data of specific client from clients.db from the given name
+#### -127.0.0.1:5000/Specific_Client_Data/name --> Returns the data of specific client from clients.db from the given name
 
-### 127.0.0.1:5000/Certain_Worker_data --> Returns the data of specific worker from employees.db
+#### -127.0.0.1:5000/Certain_Worker_data --> Returns the data of specific worker from employees.db
 
-### 127.0.0.1:5000/Edit_Employee/first_name+lastname+Email+password+date -->Rewrites employees.db data for specific employee with given argument
+#### -127.0.0.1:5000/Edit_Employee/first_name+lastname+Email+password+date -->Rewrites employees.db data for specific employee with given argument
 
-#### 127.0.0.1:5000/Validate_Employees/Employee Creds -->Rewrites employees.db data for specific employee with given argument
+#### -127.0.0.1:5000/Validate_Employees/Employee Creds -->Rewrites employees.db data for specific employee with given argument
 
-### 127.0.0.1:5000/Add_client/New Client Creds -->Rewrites employees.db data for specific employee with given argument
+#### -127.0.0.1:5000/Add_client/New Client Creds -->Rewrites employees.db data for specific employee with given argument
 
 
 ## Basic Structure of Databases:
